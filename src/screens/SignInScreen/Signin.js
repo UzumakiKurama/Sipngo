@@ -8,14 +8,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import showErrorToast from '../../helpers/ErrorHandlerPopup';
 import Styles from './signinstyles';
-import '../firebase';
+import '../../auth/firebase';
 import { setUser } from '../../redux/features/userSlice';
+import CustomButton from '../../components/Button/Button';
 
 const auth  = getAuth();
 
 export default  function Signin() {
-  // Set an initializing state while Firebase connects
-  // Handle user state changes
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const [value , setValue] = useState({email:'' , password:'' , error:''});
@@ -31,9 +30,9 @@ export default  function Signin() {
     }
 
     try{
-        await signInWithEmailAndPassword(auth , value.email , value.password);
-        dispatch(setUser({email: value.email}));
-        console.log("USER LOGGED IN");
+        await signInWithEmailAndPassword(auth , value.email , value.password)
+          .then(user => dispatch(setUser({uid: user.user.uid})));
+        
     }
     catch(error){
         switch (error.message) {
@@ -122,6 +121,7 @@ export default  function Signin() {
              onPress={()=>navigation.navigate('Signup')}>
             </Button>
           </View>
+            {/* <CustomButton title="SIGN UP" onPress={()=>navigation.navigate('Signup')} /> */}
         </View>
       </View>
     </SafeAreaView>

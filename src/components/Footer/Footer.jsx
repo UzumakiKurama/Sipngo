@@ -1,8 +1,7 @@
 import React from 'react';
 import Cart from '../Cart/Cart';
-import { Text } from 'react-native';
 
-const Footer = ()=>{
+const Footer = () => {
     return (
         <>
             <Cart/>

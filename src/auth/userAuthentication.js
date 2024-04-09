@@ -23,8 +23,8 @@ export default function userAuthentication(){
 
     React.useEffect( ()=>{
         onAuthStateChanged(auth , (user)=>{
-            console.log(user);
-            if (user){
+
+            if (user.uid !== ""){
                 dispatch(setUser({uid: user.uid}));
             }
             else{
@@ -33,5 +33,5 @@ export default function userAuthentication(){
         })
     }, []);
 
-    return { user };
+    return user;
 }

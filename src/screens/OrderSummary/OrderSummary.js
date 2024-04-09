@@ -63,7 +63,7 @@ const OrderSummary = () => {
 
         if(statusResponse.code === "PAYMENT_SUCCESS"){
           clearInterval(timer1);
-          navigation.navigate("Payment", {paymentStatus: "SUCCESS"})
+          navigation.navigate("PaymentStatus", {paymentStatus: "SUCCESS"})
         }
         console.log(statusResponse.code);
       }, 10000)
@@ -137,7 +137,6 @@ const OrderSummary = () => {
               title='Place order'
               color='#cc5200'
               onPress={OnPlaceOrderPressHandler}>
-              {/* onPress={()=> navigation.navigate("Payment", {paymentStatus: "SUCCESS"})} */}
             </Button>
           </View>
         </View>

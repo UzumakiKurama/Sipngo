@@ -1,12 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Signin from "./signin/Signin";
-import Signup from './signUp/Signup'
+import Signin from "../screens/SignInScreen/Signin";
+import Signup from '../screens/SignUpScreen/Signup'
 
 const Stack = createStackNavigator();
 
 export default function AuthStack(){
-
     return (
         <NavigationContainer>
             <Stack.Navigator>
@@ -27,5 +26,4 @@ export default function AuthStack(){
             </Stack.Navigator>
         </NavigationContainer>
     )
-
 }

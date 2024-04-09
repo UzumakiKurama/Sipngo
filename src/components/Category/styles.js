@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 15,
         letterSpacing: 1.2,
-        fontWeight: "500"
+        fontWeight: "500",
+        color: '#000'
     }
 });
 

@@ -6,16 +6,16 @@ import { RootSiblingParent } from 'react-native-root-siblings';
 
 import AppNavigator from './src/routes/AppNavigator';
 import userAuthentication from './src/auth/userAuthentication';
-import AuthStack from './src/auth/AuthStack';
+import AuthStack from './src/routes/AuthStack';
 import { calculateTotalAmount } from './src/redux/features/cartSlice';
 import './src/auth/firebase';
 
 export default function Auth() {
 
   const dispatch = useDispatch();
-  const { user } = userAuthentication();
+  const user = userAuthentication();
   const { cartItems } = useSelector(state => state.cart);
-  
+
   useEffect( () => {
     dispatch(calculateTotalAmount());
   }, [cartItems]);

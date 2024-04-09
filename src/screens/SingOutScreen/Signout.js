@@ -1,9 +1,9 @@
 import { Text, View} from 'react-native';
 import { Button } from 'react-native-elements';
 import { getAuth , signOut } from 'firebase/auth';
-
-import '../firebase';
 import { useDispatch } from 'react-redux';
+
+import '../../auth/firebase';
 import { setUser } from '../../redux/features/userSlice';
 
 const auth  = getAuth();

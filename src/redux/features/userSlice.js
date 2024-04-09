@@ -9,7 +9,7 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         setUser : (state, { payload } ) => {
-            state.userId = payload.uid;
+            state.uid = payload.uid;
         }
     }
 })

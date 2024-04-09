@@ -1,49 +1,40 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
+import globalStyles from '../../helpers/globalStyles';
 
 const styles = StyleSheet.create({
     main: {
         flex: 1,
-        alignSelf: "center",
-        backgroundColor: "white"
+        backgroundColor: "white",
+        width: "100%"
     },
     imageContainer:{
         margin: 15
-    },
-    formContainer:{
-        marginTop : 15
-    },
-    header:{
-        textAlign: "center",
-        fontSize: 35,
-        letterSpacing: 4,
-        fontWeight: "bold",
-        color: '#ffa31a'
     },
     image:{
         height: 150,
         width: "100%"
     },
+    formContainer:{
+        marginTop : 45
+    },
     formWrapper:{
         width: "100%",
     },  
     form:{
-        width: "90%",
         height: 220,
+        width: "90%",
+        alignSelf : 'center',
         borderColor: "black",
-        margin: 18,
-        padding : 10
     },
     inputWrapper:{
         flexDirection: "row",
         alignItems: "center",
-        flexWrap:"wrap",
         marginTop: 15,
         borderBottomWidth: 2,
         borderColor:'#663d00'
     },
     credInput:{
-        padding: 2,
-        marginTop: 18,
+        paddingLeft: 10,
         width: "90%",
         letterSpacing: 1,
         fontSize: 18
@@ -68,11 +59,10 @@ const styles = StyleSheet.create({
     orWrapperText:{
         textAlign: "center",
         letterSpacing: 1.5,
-        color:"#ffa31a",
+        color: globalStyles.primaryColor,
         fontWeight:"600",
         fontSize: 16
     }
-
 })
 
 export default styles;

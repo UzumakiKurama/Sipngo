@@ -1,7 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import {Linking} from 'react-native';
 
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import DrawerNavigator from './DrawerNavigator';
@@ -10,22 +9,10 @@ import OrderSummary from '../screens/OrderSummary/OrderSummary';
 import Profile from '../screens/ProfileScreen/Profile';
 import Product from '../screens/ProductScreen/Product';
 import Subscription from '../screens/SubscriptionScreen/Subscription';
-// import SubscriptionDetails from '../screens/SubscriptionScreen/SubscriptionDetails';
-
-// const prefix = Linking.createURL('/')
+import PaymentStatus from '../screens/PaymentSuccessScreen/PaymentStatus';
 
 const Stack = createStackNavigator();
 const AppNavigator = () => {
-
-// const linking = {
-//   prefixes : [prefix],
-//   config : {
-//     screens: {
-//       Home : "home",
-//       Profile : "profile"
-//     }
-//   }
-// }
 
   return (
     <NavigationContainer>
@@ -85,22 +72,14 @@ const AppNavigator = () => {
             headerShown: false
           }}
         />
-        {/* <Stack.Screen
-          name = "SubscriptionDetails"
-          component = {SubscriptionDetails}
-          options={{
-            title:"Subscription Details"
-          }} 
-        /> */}
-        {/*
         <Stack.Screen
-          name = "Payment"
-          component={Payment}
+          name = "PaymentSuccess"
+          component={PaymentStatus}
           options={{
-            title:"Payments"
+            title:"Payment"
           }} 
         /> 
-         */}
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

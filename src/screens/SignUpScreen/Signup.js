@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 import { getAuth , createUserWithEmailAndPassword } from 'firebase/auth';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { Controller, useForm } from 'react-hook-form';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Controller, Form, useForm } from 'react-hook-form';
 
+import '../../auth/firebase';
 import config from '../../helpers/config';
 import showErrorToast from '../../helpers/ErrorHandlerPopup';
-import styles from './signUpStyles';
 import { setUserDetails } from '../../redux/features/userDetailsSlice';
-import '../firebase';
+import styles from './signUpStyles';
 
 const auth  = getAuth();
 
